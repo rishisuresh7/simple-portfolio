@@ -1,0 +1,30 @@
+.experience-container {
+    width: 100vw;
+    height: 90vh;
+    margin-top: 10vh;
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .experience-option {
+        height: 30%;
+        width: 30%;
+        padding: 20px;
+        display: flex;
+        color: darkslategray;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-around;
+
+        i {
+            font-size: 18px;
+        }
+
+        h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
+}
