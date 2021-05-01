@@ -8,10 +8,11 @@ const Projects = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
+        const img = 'https://raw.githubusercontent.com/rishisuresh7/overview/master/project_icon.png'
         fetch('https://run.mocky.io/v3/8805761b-450f-4529-bab8-b5bb11b9a2a3')
         .then(response => response.json())
         .then(response => {
-            const items = response.map(item => ({...item, image: 'https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg'}))
+            const items = response.map(item => ({...item, image: img}))
             setItems(items);
             setLoading(false);
         })

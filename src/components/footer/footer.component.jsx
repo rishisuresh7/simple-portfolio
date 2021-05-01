@@ -8,42 +8,48 @@ const Icon = (props) => {
     </div>)
 }
 
+const items = [
+    {
+        protocol: 'mailto:',
+        className: 'fa fa-envelope',
+        address: 'rishi9632@gmail.com'
+    },
+    {
+        className: 'fa fa-linkedin',
+        address: 'https://www.linkedin.com/in/rishi-suresh'
+    },
+    {
+        protocol: 'tel:',
+        className: 'fa fa-mobile',
+        address: '+91-8792615476'
+    },
+    {
+        className: 'fa fa-github',
+        address: 'https://github.com/rishisuresh7'
+    },
+    {},
+    {
+        className: 'fa fa-instagram',
+        address: 'https://www.instagram.com/rishisuresh7'
+    },
+];
+
 const Footer = () => {
     return (<div className="footer-container">
         <ul className='footer-content'>
-            <li className="footer-option">
-                <Icon>
-                    <i className="fa fa-envelope"></i>
-                </Icon>
-                <span>rishi9632@gmail.com</span>
-            </li>
-            <li className="footer-option">
-                <Icon>
-                    <i className="fa fa-linkedin"></i>
-                </Icon>
-                <span>https://www.linkedin.com/in/rishi-suresh</span>
-            </li>
-            <li className="footer-option">
-                <Icon>
-                    <i className='fa fa-mobile'></i>
-                </Icon>
-                <span>+91-8792615476</span>
-            </li>
-            <li className="footer-option">
-                <Icon>
-                    <i className="fa fa-github"></i>
-                </Icon>
-                <span>https://github.com/rishisuresh7</span>
-            </li>
-            <li className="footer-option">
-
-            </li>
-            <li className="footer-option">
-                <Icon>
-                    <i className="fa fa-instagram"></i>
-                </Icon>
-                <span>https://www.instagram.com/rishisuresh7</span>
-            </li>
+            {
+                items.map(({protocol, className, address}, i) => 
+                    (<li key={i} className="footer-option">
+                        {
+                            className ? (<a target='_blank' rel='noreferrer' href={protocol?`${protocol}${address}`:address}>
+                                            <Icon>
+                                                <i className={className}></i>
+                                            </Icon>
+                                            <span>{address}</span>
+                                        </a>) : null
+                        }
+                    </li>))
+            }
         </ul>
     </div>)
 }
